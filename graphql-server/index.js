@@ -6,6 +6,7 @@ const typeDefs = gql`
   type Company {
     companyName: String!
     projectsCount: Int!
+    id:ID!
     
   }
 
@@ -17,7 +18,7 @@ const typeDefs = gql`
     allCompanies: [Company!]!
     findCompany(companyName: String!): Company
   }
-  # The schema for a mutation for adding a new company
+  # The schema for a mutation
   type Mutation {
     addCompany(companyName:String!, projectsCount: Int!): Company
     editCompany(companyName: String!, projectsCount: Int! ): Company
@@ -26,10 +27,10 @@ const typeDefs = gql`
 
 #to filter the query 
 #The type YesNo is GraphQL enum, or an enumerable, with two possible values YES or NO.
-  enum YesNo {
-    YES
-    NO
-  }
+ # enum YesNo {
+   # YES
+    #NO
+  #}
 `;
 
 let allCompanies = [

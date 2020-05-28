@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-
+//take care of requestong and cashing data as well as updating UI
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
 });
