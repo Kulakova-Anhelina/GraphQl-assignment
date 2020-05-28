@@ -22,8 +22,7 @@ const ProjectList = () => {
   ] = useMutation(deleteProject, {
     //make sure refetched queries are completed before the mutation is considered done
     awaitRefetchQueries: true,
-    //An array or function that allows you to specify which queries
-    //you want to refetch after a mutation has occurred
+    //An array or function that allows to specify which queries to refetch after a mutation has occurred
     refetchQueries: [{ query: allCompanies }],
   });
 

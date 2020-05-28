@@ -5,8 +5,8 @@ import Statistics from "./components/Statistics"
 function App() {
  
   return ( // When there is data
-    <div className="App">
-    <h1 className="container">Projects count by company</h1>
+    <div className="container">
+    <h1 className="App-header">Number of projects by company</h1>
     <Statistics/>
     </div>
   );
