@@ -6,6 +6,7 @@ function App() {
  
   return ( // When there is data
     <div className="App">
+    <h1 className="container">Projects count by company</h1>
     <Statistics/>
     </div>
   );
