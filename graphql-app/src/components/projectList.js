@@ -4,7 +4,7 @@ import { toast } from "react-toastify"; // allow to add notification to app .
 import Grid from "@material-ui/core/Grid";
 import { useMutation, useQuery } from "@apollo/react-hooks"; //provides the functionality for making mutations.
 // useQuery is a hook that leverages the Hooks API to share GraphQL data with UI.
-
+//invoke query using useQuery hook.
 import allCompanies from "../../../../graphql/queries/all_companies.graphql";
 import deleteProject from "../../../../graphql/mutations/delete_project.graphql"; //import deleteProject mutation
 import LoadingLayout from "../../../../shared/loading";
@@ -26,7 +26,7 @@ const ProjectList = () => {
     refetchQueries: [{ query: allCompanies }],
   });
 
-  //assins  deleteProjectMutation to use mutataion hook which linked to deleteProjectMutationLoading from graphQl
+  //assins  deleteProjectMutation to use mutataion hook which linked to deleteProjectMutation Loading from graphQl
 
   const {
     //	A boolean that indicates whether the request is in flight
@@ -36,7 +36,7 @@ const ProjectList = () => {
   } = useQuery(allCompanies);
 
   const loading = companiesLoading || deleteProjectMutationLoading;
-
+//is  true until the request is  finished.
   const deleteHandle = (projectObj) => setDeletingProject(projectObj);
 
   const submitDeleteHandle = () =>

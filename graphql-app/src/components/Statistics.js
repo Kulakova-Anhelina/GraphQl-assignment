@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip,Legend,CartesianGrid } from "recha
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-
+//Load the full build.
 var _ = require("lodash");
 
 export default function Statistics() {

@@ -1,18 +1,12 @@
 const { ApolloServer, gql } = require("apollo-server");
 
-// A schema is a collection of type definitions (hence "typeDefs")
-// that together define the "shape" of queries that are executed against your data.
 const typeDefs = gql`
   type Company {
     companyName: String!
     projectsCount: Int!
-    id:ID!
-    
+    id: ID!
   }
 
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "companies" query returns an array of zero or more companies (defined above).
   type Query {
     companyCount: Int!
     allCompanies: [Company!]!
@@ -20,16 +14,15 @@ const typeDefs = gql`
   }
   # The schema for a mutation
   type Mutation {
-    addCompany(companyName:String!, projectsCount: Int!): Company
-    editCompany(companyName: String!, projectsCount: Int! ): Company
-  },
-  
+    addCompany(companyName: String!, projectsCount: Int!): Company
+    editCompany(companyName: String!, projectsCount: Int!): Company
+  }
 
-#to filter the query 
-#The type YesNo is GraphQL enum, or an enumerable, with two possible values YES or NO.
- # enum YesNo {
-   # YES
-    #NO
+  #to filter the query
+  #The type YesNo is GraphQL enum, or an enumerable, with two possible values YES or NO.
+  # enum YesNo {
+  # YES
+  #NO
   #}
 `;
 
@@ -89,8 +82,6 @@ const resolvers = {
       allCompanies.find((c) => c.companyName === args.companyName),
   },
 
-  //The mutation adds the object given to it as a parameter args to the array persons,
-  // and returns the object it added to the array
   Mutation: {
     addCompany: (root, args) => {
       if (allCompanies.find((c) => c.companyName === args.companyName)) {
